@@ -1,0 +1,12 @@
+# Default configuration for MedMT
+train_data: data/train.csv
+test_data: data/test.csv
+submission_sample: data/sample_submission.csv
+model_save_path: checkpoints/medmt_model.pt
+output_dir: outputs/
+pretrained_model: "Qwen/Qwen2.5-Omni-7B"  # ใช้ Qwen2.5-Omni-7B เป็นโมเดลหลัก
+max_seq_length: 256
+batch_size: 16
+epochs: 5
+learning_rate: 3e-5
+use_context: true

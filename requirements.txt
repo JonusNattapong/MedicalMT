@@ -1,0 +1,26 @@
+torch>=1.13
+transformers==4.40.0
+datasets>=2.19.0
+sentencepiece
+sacrebleu
+pandas
+scikit-learn
+accelerate
+tqdm
+openpyxl
+jupyter
+safetensors
+huggingface_hub
+peft
+deepspeed
+tenacity>=8.2.0  # For retry logic
+python-dotenv>=1.0.0  # For .env configuration
+openai>=1.0.0  # For DeepSeek API
+matplotlib>=3.5.0  # For visualization
+seaborn>=0.12.0  # For statistical visualizations
+nltk>=3.7  # For BLEU and METEOR scoring
+importlib-metadata>=4.13.0  # For dynamic module loading
+PyYAML>=6.0  # For configuration files
+pytest>=7.0.0  # For testing
+beautifulsoup4>=4.11.0  # For HTML parsing
+scipy>=1.10.0  # For scientific computing

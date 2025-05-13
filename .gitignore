@@ -1,0 +1,32 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
+*.ipynb_checkpoints/
+
+# Data
+/data/*.csv
+/data/*.tsv
+
+# Model checkpoints
+checkpoints/
+outputs/
+
+# Environment
+.env
+.venv
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# VSCode
+.vscode/
+
+logs/
+
+XiaoduoAILab/
+
+models/
+DatasetDownload/
+
+data
