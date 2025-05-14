@@ -251,6 +251,19 @@ def generate_report(metrics: Dict[str, Any], output_path: str):
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write('\n'.join(report))
 
+def convert_numpy_types(obj):
+    if isinstance(obj, np.integer):
+        return int(obj)
+    elif isinstance(obj, np.floating):
+        return float(obj)
+    elif isinstance(obj, np.ndarray):
+        return obj.tolist()
+    elif isinstance(obj, dict):
+        return {k: convert_numpy_types(v) for k, v in obj.items()}
+    elif isinstance(obj, list):
+        return [convert_numpy_types(i) for i in obj]
+    return obj
+
 def analyze_dataset(dataset_path: str, output_dir: str = None) -> Dict[str, Any]:
     """
     Analyze a MedMT dataset and generate reports
@@ -297,10 +310,13 @@ def analyze_dataset(dataset_path: str, output_dir: str = None) -> Dict[str, Any]
     print(f"Generating analysis report: {report_path}")
     generate_report(metrics, report_path)
     
+    # Convert numpy types in metrics to Python native types before saving to JSON
+    metrics_converted = convert_numpy_types(metrics)
+    
     # Save metrics as JSON
     metrics_path = os.path.join(output_dir, 'metrics.json')
     with open(metrics_path, 'w', encoding='utf-8') as f:
-        json.dump(metrics, f, ensure_ascii=False, indent=2)
+        json.dump(metrics_converted, f, ensure_ascii=False, indent=2)
     
     print(f"Analysis complete. Results saved to {output_dir}")
     return metrics
