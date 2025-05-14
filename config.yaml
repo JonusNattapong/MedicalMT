@@ -2,11 +2,11 @@
 train_data: data/train.csv
 test_data: data/test.csv
 submission_sample: data/sample_submission.csv
-model_save_path: checkpoints/medmt_model.pt
+model_save_path: models/MedicalZbitxLM
 output_dir: outputs/
-pretrained_model: "Qwen/Qwen2.5-Omni-7B"  # ใช้ Qwen2.5-Omni-7B เป็นโมเดลหลัก
+pretrained_model: "XiaoduoAILab/XmodelLM1.5" # Using XiaoduoAILab/XmodelLM1.5 as the base
 max_seq_length: 256
-batch_size: 16
-epochs: 5
-learning_rate: 3e-5
+batch_size: 16 # Adjust based on your GPU memory
+epochs: 5 # Adjust as needed
+learning_rate: 3e-5 # Adjust as needed
 use_context: true
