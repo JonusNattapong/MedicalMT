@@ -14,14 +14,20 @@ Dependencies:
     pip install pandas python-dotenv openai tqdm
     For 'arrow' or 'parquet' format, also install: pip install pyarrow
 """
+import sys
+import os
+
+# Add project root to sys.path to allow absolute imports from src
+_project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+if _project_root not in sys.path:
+    sys.path.insert(0, _project_root)
+
 import argparse
 import pandas as pd
 import random
-import os
 import re
 from openai import OpenAI
 from dotenv import load_dotenv
-import sys
 import time
 from tqdm import tqdm as base_tqdm
 import datetime
