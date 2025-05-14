@@ -1,5 +1,5 @@
 torch>=1.13
-transformers==4.40.0
+transformers>=4.36.0
 datasets>=2.19.0
 sentencepiece
 sacrebleu
@@ -24,3 +24,12 @@ PyYAML>=6.0  # For configuration files
 pytest>=7.0.0  # For testing
 beautifulsoup4>=4.11.0  # For HTML parsing
 scipy>=1.10.0  # For scientific computing
+
+# Multimodal vision+LLM training requirements
+transformers>=4.36.0
+accelerate
+pillow
+torch
+pandas
+tqdm
+timm
